@@ -124,10 +124,10 @@ const App = () => {
     }
   }
 
-
   useEffect(() => {
     checkIfWalletIsConnected();
-  }, [checkIfWalletIsConnected])
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const renderNotConnectedContainer = () => (
     <button onClick={connectWallet} className="cta-button connect-wallet-button">
