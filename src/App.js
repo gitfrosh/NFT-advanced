@@ -6,9 +6,6 @@ import Kasumiko from './utils/Kasumiko.json';
 
 const TWITTER_HANDLE = 'frankanka';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-const OPENSEA_LINK = '';
-const TOTAL_MINT_COUNT = 50;
-
 // I moved the contract address to the top for easy access.
 const CONTRACT_ADDRESS = "0x181d7B52737d824a97d131c3BA464D9BbF32bF73";
 
@@ -130,7 +127,7 @@ const App = () => {
 
   useEffect(() => {
     checkIfWalletIsConnected();
-  }, [])
+  }, [checkIfWalletIsConnected])
 
   const renderNotConnectedContainer = () => (
     <button onClick={connectWallet} className="cta-button connect-wallet-button">
@@ -158,7 +155,7 @@ const App = () => {
        
           {currentAccount === "" ? renderNotConnectedContainer() : renderMintUI()}
          < br /><br />   <p>
-          <a href=""><button className="opensea-button">🌊 View Collection on OpenSea</button></a>
+          <a href="/"><button className="opensea-button">🌊 View Collection on OpenSea</button></a>
         </p>
        </div>
       
